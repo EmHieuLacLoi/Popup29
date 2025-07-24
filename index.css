@@ -168,13 +168,22 @@ body {
   font-weight: 700;
   color: #111827;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
 }
 
 .menu-item-subtitle {
-  font-size: 14px;
+  font-size: 13px;
   color: #6b7280;
   margin-bottom: 6px;
   font-weight: 500;
+}
+
+.menu-item-icon {
+  line-height: 1;
+  font-size: 14px;
+  color: #3b82f6;
+  margin-right: 3px;
 }
 
 .menu-item-description {
