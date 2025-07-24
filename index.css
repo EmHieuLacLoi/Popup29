@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  background: linear-gradient(135deg, #1e3c8b 0%, #3730a3 50%, #7c3aed 100%);
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(255, 255, 255, 0.08) 2px,
+      transparent 2px
+    );
+  background-size: 50px 50px, 80px 80px, 120px 120px;
+}
+
+.firework {
+  position: absolute;
+  right: 50px;
+  top: 100px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.3;
+}
+
+.firework::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 80px;
+  background: white;
+  transform: translate(-50%, -50%) rotate(0deg);
+  box-shadow: 0 0 0 2px white, 0 0 0 2px white;
+}
+
+.firework::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 60px;
+  background: white;
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 0 2px white, 0 0 0 2px white;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  z-index: 20;
+}
+
+.close-button::before,
+.close-button::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #7c3aed;
+  border-radius: 1px;
+}
+
+.close-button::before {
+  transform: rotate(45deg);
+}
+
+.close-button::after {
+  transform: rotate(-45deg);
+}
+
+.header {
+  text-align: center;
+  padding: 80px 0 60px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+
+.menu-item {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 20px 24px;
+  color: #1f2937;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item-content {
+  flex: 1;
+}
+
+.menu-item-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.menu-item-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.menu-item-description {
+  font-size: 14px;
+  color: #9ca3af;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow::after {
+  content: "→";
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bottom-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  animation: sparkle 2s infinite;
+}
+
+.sparkle:nth-child(1) {
+  top: 120px;
+  right: 100px;
+  animation-delay: 0s;
+}
+.sparkle:nth-child(2) {
+  top: 180px;
+  right: 150px;
+  animation-delay: 0.5s;
+}
+.sparkle:nth-child(3) {
+  top: 200px;
+  right: 80px;
+  animation-delay: 1s;
+}
+.sparkle:nth-child(4) {
+  top: 160px;
+  right: 120px;
+  animation-delay: 1.5s;
+}

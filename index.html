@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tinh Hoa Văn Hóa</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="background-pattern"></div>
+    <div class="firework"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+
+    <button class="close-button"></button>
+
+    <div class="container">
+      <div class="header">
+        <h1 class="title">METAFORCE 2/9</h1>
+        <p class="subtitle">METAFORCE 2/9</p>
+      </div>
+
+      <div class="menu-items">
+        <a
+          href="https://www.google.com/search?q=tuy%E1%BA%BFn+%C4%91%C6%B0%E1%BB%9Dng+duy%E1%BB%87t+binh"
+          class="menu-item"
+        >
+          <div class="menu-item-content">
+            <div class="menu-item-title">TUYẾN ĐƯỜNG DUYỆT BINH</div>
+            <div class="menu-item-subtitle">Tuyến phố biểu tượng</div>
+            <div class="menu-item-description">
+              Parade Route – Symbol of National Pride
+            </div>
+          </div>
+          <div class="arrow"></div>
+        </a>
+
+        <a
+          href="https://www.google.com/search?q=th%C3%A1p+r%C3%B9a+h%E1%BB%93+g%C6%B0%C6%A1m"
+          class="menu-item"
+        >
+          <div class="menu-item-content">
+            <div class="menu-item-title">THÁP RÙA HỒ GƯƠM</div>
+            <div class="menu-item-subtitle">Biểu tượng thủ đô</div>
+            <div class="menu-item-description">
+              Turtle Tower – Heart of Hanoi
+            </div>
+          </div>
+          <div class="arrow"></div>
+        </a>
+
+        <a
+          href="https://www.google.com/search?q=nh%C3%A0+h%C3%A1t+l%E1%BB%9Bn"
+          class="menu-item"
+        >
+          <div class="menu-item-content">
+            <div class="menu-item-title">NHÀ HÁT LỚN</div>
+            <div class="menu-item-subtitle">Kiến trúc Pháp cổ điển</div>
+            <div class="menu-item-description">
+              Opera House – French Colonial Architecture
+            </div>
+          </div>
+          <div class="arrow"></div>
+        </a>
+
+        <a
+          href="https://www.google.com/search?q=l%C4%83ng+ch%E1%BB%A7+t%E1%BB%8Bch"
+          class="menu-item"
+        >
+          <div class="menu-item-content">
+            <div class="menu-item-title">LĂNG CHỦ TỊCH</div>
+            <div class="menu-item-subtitle">Nơi yên nghỉ của Bác Hồ</div>
+            <div class="menu-item-description">
+              Ho Chi Minh Mausoleum – Sacred Monument
+            </div>
+          </div>
+          <div class="arrow"></div>
+        </a>
+
+        <a
+          href="https://www.google.com/search?q=c%E1%BB%99t+c%E1%BB%9D+h%C3%A0+n%E1%BB%99i"
+          class="menu-item"
+        >
+          <div class="menu-item-content">
+            <div class="menu-item-title">CỘT CỜ HÀ NỘI</div>
+            <div class="menu-item-subtitle">Tháp cờ lịch sử</div>
+            <div class="menu-item-description">
+              Hanoi Flag Tower – Historical Landmark
+            </div>
+          </div>
+          <div class="arrow"></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="bottom-indicator"></div>
+
+    <script>
+      document.querySelector(".close-button").addEventListener("click", () => {
+        document.querySelector(".container").style.display = "none";
+        document.querySelector(".close-button").style.display = "none";
+        document.querySelector(".bottom-indicator").style.display = "none";
+        document.body.style.background = "#f3f4f6";
+      });
+
+      function createSparkle() {
+        const sparkle = document.createElement("div");
+        sparkle.className = "sparkle";
+        sparkle.style.left = Math.random() * window.innerWidth + "px";
+        sparkle.style.top = Math.random() * window.innerHeight + "px";
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+          sparkle.remove();
+        }, 2000);
+      }
+
+      setInterval(createSparkle, 3000);
+    </script>
+  </body>
+</html>
